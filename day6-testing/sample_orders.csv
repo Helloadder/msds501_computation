@@ -1,0 +1,6 @@
+order_id,product,quantity,unit_price,customer_email
+1001,Widget,4,9.99,alice@example.com
+1002,Gadget,2,19.99,bob@example.com
+1003,Widget,-1,5.00,carol@example.com
+1004,Gizmo,abc,3.50,dave@example.com
+1005,gadget,1,19.99,eve@example.com
