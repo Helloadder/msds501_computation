@@ -30,12 +30,18 @@
 
 scores = ['88', '95', 'absent', '72', 'n/a', '84']
 
+
 valid = []
 
-for i, s in enumerate(scores):
-    score = int(s)            # <-- this line crashes on bad strings
-    print(f'Score [{i}]: {score}')
-    valid.append(score)
 
+for i, s in enumerate(scores):
+    try:
+        score = int(s)            # <-- this line crashes on bad strings
+        # line 37 crashes on third score which can't be changed to an int; this is a TypeError
+        print(f'Score [{i}]: {score}')
+        valid.append(score)
+    except ValueError:
+        print(f"[index {i}] Skipped bad score: '{s}'")
+              
 print(f'Total of valid scores: {sum(valid)}')
 print(f'Count of valid scores: {len(valid)}')
